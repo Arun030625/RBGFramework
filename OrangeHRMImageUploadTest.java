@@ -1,7 +1,5 @@
 package testPackage1;
 
-import java.io.IOException;
-
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -27,24 +25,24 @@ public class OrangeHRMImageUploadTest extends BaseTest
 	{
 		beforeClassForChild(this);
 	}	
-	 @Test
+	@Test
 	public void photoUploadForMyInfo() throws Throwable 
 	{
 		extentLoggerECP = parentExtentLogger.createNode("login With Valid Credentials");
 		_instance = PropertySingleton.getInstance();
 		edit=new OrangeHRMImageUploadpage(GenericKeywordsWithPage.driver);
-		
+
 		edit.enterUserName("Admin");
 		edit.enterPassWord("admin123");
 		edit.clickOnLoginButton();
 		edit.clickOnmyinfo();
 		edit.clickOnImage();
 		edit.clickOnAddImage();
-		 edit.upLoad();
-		 
-		 edit.clickOnSave();
-		 
+		edit.upLoad();
+
+		edit.clickOnSave();
+
 		System.out.println("photo uploaded succesfully");
 	}
- 
+
 }
